@@ -1,0 +1,23 @@
+import { Outlet } from "react-router-dom";
+
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
+
+const MainLayout = ({ children }) => {
+  return (
+    <div
+      className="min-h-screen flex flex-col"
+      style={{
+        backgroundColor: "var(--color-bg)",
+      }}
+    >
+      <Navbar />
+
+      <main className="flex-1">{children || <Outlet />}</main>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default MainLayout;
